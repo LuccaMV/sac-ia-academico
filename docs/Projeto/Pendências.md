@@ -11,7 +11,10 @@ Voltar ao [[00 Índice]]. A versão formal fica em [[README#18. Pendências e de
 - [x] Criar a chave do Gemini e testar o chat ([[Passo a passo de configuração]]). 2026-09-14: chave no `.env.local`, chat respondendo com fonte citada.
 - [x] Criar o repositório no GitHub e decidir se ele é público ou privado, e a licença. 2026-09-15: público, sem licença por enquanto ([[DEC-017 Repositório público no GitHub]])
 - [ ] Escolher a licença do repositório (hoje todos os direitos reservados)
-- [ ] O projeto virou TCC: o Rafael continua como coautor? Qual o papel da Profª. Flávia no TCC (coorientadora ou só a IC)? Quais as datas do TCC? Depois disso, revisar os textos que dizem só "Iniciação Científica" no README, na página do projeto e no rodapé do chat
+- [x] O Rafael continua como coautor no TCC? 2026-09-15: sim
+- [ ] Papel da Profª. Flávia no TCC: coorientadora ou não. 2026-09-15: ainda indefinido, mas ela continua citada de qualquer forma, porque ajudou a desenvolver o projeto
+- [ ] Datas do TCC
+- [ ] Trocar "Iniciação Científica" por "TCC" no README, na página do projeto (`lib/project-content.ts` e `app/page.tsx`) e no rodapé do chat (`components/ChatWindow.tsx`). 2026-09-15: confirmado pelo Lucca, sem urgência
 - [ ] Criar o projeto no Supabase, aplicar a migração e criar o bucket `documents`
 - [ ] Conferir os 12 temas da base e aprovar os que estiverem corretos, começando pelas divergências listadas em [[Fontes da UNIFENAS]] ([[Como editar a base de conhecimento]])
 - [ ] Horário de Ciência da Computação: informar o semestre, o período de cada turma e o que significam os números 2109, 2107, 2002 e 2003; enviar a imagem de sexta-feira, se houver ([[knowledge-base/horario-ciencia-da-computacao|horário]])

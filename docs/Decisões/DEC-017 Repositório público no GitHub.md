@@ -8,7 +8,7 @@ data: 2026-09-15
 
 Voltar ao [[00 Índice]].
 
-**Contexto:** em 2026-09-15 o Lucca pediu para subir o projeto ao GitHub. O projeto passou a ser o TCC dele, com orientação do Prof. Celso de Ávila Ramos, mantendo a Profª. Flávia, orientadora da IC ([[Visão geral]]). A condição foi guardar tudo que possa prejudicar a segurança do projeto ou dele.
+**Contexto:** em 2026-09-15 o Lucca pediu para subir o projeto ao GitHub. O projeto passou a ser o TCC do Lucca e do Rafael, com orientação do Prof. Celso de Ávila Ramos, mantendo a Profª. Flávia, orientadora da IC ([[Visão geral]]). A condição foi guardar tudo que possa prejudicar a segurança do projeto ou dele.
 
 **Decisão:**
 - Repositório **público** `LuccaMV/sac-ia-academico`, com a pasta `SAC-ACADEMICO` como raiz e o vault inteiro versionado (código, `docs/`, base de conhecimento, relatório e imagens).

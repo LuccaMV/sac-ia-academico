@@ -13,8 +13,8 @@ MVP introdutório de um chat web que responde dúvidas acadêmicas e administrat
 ## Equipe
 - Pesquisadores: Lucca Valladão e Marchetti e Rafael Costa Monte Alegre
 - Orientador do TCC: Prof. Celso de Ávila Ramos (desde 2026-09-15)
-- Orientadora da IC: Profª. Dra. Flávia Aparecida Oliveira Santos
-- Programa: Iniciação Científica em Ciência da Computação, UNIFENAS, continuada como TCC do Lucca ([[DEC-017 Repositório público no GitHub]])
+- Orientadora da IC: Profª. Dra. Flávia Aparecida Oliveira Santos. Continua citada no TCC porque ajudou a desenvolver o projeto; se será coorientadora ainda não foi definido ([[Pendências]])
+- Programa: Iniciação Científica em Ciência da Computação, UNIFENAS, continuada como TCC do Lucca e do Rafael ([[DEC-017 Repositório público no GitHub]])
 
 ## Prazos
 - 2 semanas até a apresentação parcial
