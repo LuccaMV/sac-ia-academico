@@ -14,7 +14,7 @@ Voltar ao [[00 Índice]].
 - Repositório **público** `LuccaMV/sac-ia-academico`, com a pasta `SAC-ACADEMICO` como raiz e o vault inteiro versionado (código, `docs/`, base de conhecimento, relatório e imagens).
 - **Sem licença** por enquanto: todos os direitos reservados até a decisão ([[Pendências]]).
 - Commits assinados com o e-mail noreply do GitHub, para o e-mail pessoal não aparecer no histórico. A identidade foi configurada só neste repositório.
-- Ficam fora do Git (`.gitignore`): `.env*` exceto `.env.example`, `node_modules/`, `.next/`, `*.tsbuildinfo`, `next-env.d.ts`, o estado da interface do Obsidian (`workspace*.json`), os plugins de terceiros do Obsidian (`.obsidian/plugins/`), arquivos locais do Supabase CLI e `.claude/settings.local.json`.
+- Ficam fora do Git (`.gitignore`): `.env*` exceto `.env.example`, `node_modules/`, `.next/`, `*.tsbuildinfo`, `next-env.d.ts`, o estado da interface do Obsidian (`workspace*.json`), os plugins de terceiros do Obsidian (`.obsidian/plugins/`), arquivos locais do Supabase CLI e a pasta `.claude/` (configuração local do Claude Code, retirada do Git em 2026-09-15 a pedido do Lucca; o `launch.json` continua só na máquina de quem usa).
 - `.gitattributes` fixa LF no repositório, porque o Git desta máquina usa `core.autocrlf=true`.
 
 **Verificações antes do primeiro push:**

@@ -50,5 +50,5 @@ next-env.d.ts
 supabase/.temp/
 supabase/.branches/
 
-# claude code (permissões locais)
-.claude/settings.local.json
+# claude code (configuração local)
+.claude/
