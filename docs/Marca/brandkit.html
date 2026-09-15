@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>SAC IA Acadêmico · Brand kit v0.1</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=block" rel="stylesheet">
+<style>
+  :root {
+    --marinho: #04436E;
+    --noturno: #0B2F4C;
+    --tinta: #061A2B;
+    --ciano: #00ABC5;
+    --ciano-claro: #BDEFF6;
+    --ambar: #F5B83D;
+    --coral: #E4574B;
+    --nevoa: #EFFDFF;
+    --papel: #F5F7F8;
+    --grafite: #4C4D4D;
+    --canvas: #040C14;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1600px; height: 1000px; background: var(--canvas); font-family: Manrope, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .board { width: 1600px; height: 1000px; padding: 34px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); gap: 14px; }
+  .p { position: relative; border-radius: 14px; overflow: hidden; }
+  .mono { font-family: "IBM Plex Mono", monospace; }
+  .lbl { position: absolute; top: 16px; left: 20px; font: 500 10.5px/1 "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+  .pg { position: absolute; bottom: 14px; right: 18px; font: 500 10.5px/1 "IBM Plex Mono", monospace; letter-spacing: .06em; }
+  .dark { color: #fff; } .dark .lbl { color: rgba(255,255,255,.5); } .dark .pg { color: rgba(255,255,255,.35); }
+  .light { color: var(--tinta); } .light .lbl { color: rgba(6,26,43,.5); } .light .pg { color: rgba(6,26,43,.35); }
+  svg.mark { display: block; }
+
+  /* 01 capa */
+  .p1 { background: radial-gradient(120% 90% at 20% 0%, #0A3A5E 0%, var(--tinta) 60%); }
+  .p1 .grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 24px 24px; }
+  .p1 .lockup { position: absolute; left: 44px; top: 50%; transform: translateY(-46%); display: flex; align-items: center; gap: 22px; }
+  .wm-top { font-weight: 800; font-size: 50px; letter-spacing: -.02em; line-height: .9; }
+  .wm-bottom { font-weight: 600; font-size: 13px; letter-spacing: .52em; color: var(--ciano); margin-top: 10px; padding-left: 3px; }
+  .p1 .endorse { position: absolute; left: 44px; bottom: 18px; font-size: 11px; font-weight: 500; color: rgba(255,255,255,.55); letter-spacing: .02em; }
+
+  /* 02 construção */
+  .p2 { background: var(--papel); }
+  .p2 svg { position: absolute; inset: 0; }
+  .spec { position: absolute; right: 22px; top: 50%; transform: translateY(-50%); display: grid; gap: 10px; font: 500 11px/1.25 "IBM Plex Mono", monospace; color: var(--noturno); }
+  .spec b { display: block; font-family: Manrope; font-weight: 700; font-size: 12.5px; color: var(--tinta); }
+
+  /* 03 digital */
+  .p3 { background: linear-gradient(160deg, #DCEBF1 0%, #C9DFE8 100%); }
+  .browser { position: absolute; left: 26px; right: 26px; top: 40px; bottom: -12px; background: #fff; border-radius: 10px 10px 0 0; box-shadow: 0 18px 40px rgba(6,26,43,.18); overflow: hidden; }
+  .chrome { height: 30px; background: #F1F4F6; display: flex; align-items: center; gap: 6px; padding: 0 12px; border-bottom: 1px solid #E3E8EC; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #CBD3D9; }
+  .url { margin-left: 14px; flex: 1; height: 18px; border-radius: 9px; background: #fff; border: 1px solid #E0E6EA; font: 500 10px/16px "IBM Plex Mono", monospace; color: #5B6B78; padding-left: 10px; }
+  .apphead { display: flex; align-items: center; gap: 8px; padding: 9px 14px; border-bottom: 1px solid #EEF2F4; font-weight: 700; font-size: 12px; color: var(--marinho); }
+  .apphead span { font-weight: 500; color: #7A8994; font-size: 10.5px; margin-left: 2px; }
+  .chat { padding: 12px 14px; display: grid; gap: 9px; }
+  .b-user { justify-self: end; background: var(--marinho); color: #fff; font-size: 11.5px; font-weight: 500; padding: 8px 12px; border-radius: 12px 12px 3px 12px; }
+  .b-bot { justify-self: start; max-width: 82%; background: var(--papel); color: var(--tinta); font-size: 11.5px; line-height: 1.4; padding: 9px 12px; border-radius: 12px 12px 12px 3px; }
+  .src { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; font: 500 9.5px/1 "IBM Plex Mono", monospace; color: var(--marinho); background: var(--ciano-claro); padding: 4px 7px; border-radius: 6px; }
+  .src i { width: 6px; height: 6px; border-radius: 50%; background: var(--ciano); display: block; }
+
+  /* 04 essência */
+  .p4 { background: var(--ciano); color: var(--tinta); }
+  .p4 .lbl { color: rgba(6,26,43,.55); } .p4 .pg { color: rgba(6,26,43,.4); }
+  .tag { position: absolute; left: 30px; bottom: 44px; font-weight: 800; font-size: 60px; line-height: .95; letter-spacing: -.035em; color: var(--tinta); }
+  .tag em { font-style: normal; color: #fff; }
+  .p4 .sub { position: absolute; left: 32px; bottom: 20px; font: 500 11px/1 "IBM Plex Mono", monospace; color: rgba(6,26,43,.7); }
+  .p4 .ghost { position: absolute; right: -46px; top: -58px; opacity: .14; }
+
+  /* 05 cores */
+  .p5 { background: var(--tinta); }
+  .sw { position: absolute; left: 20px; right: 20px; top: 42px; display: grid; grid-template-columns: 1.6fr 1.3fr 1fr 1fr .8fr .8fr; gap: 8px; height: 176px; }
+  .s { border-radius: 9px; padding: 10px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 11px; font-weight: 700; }
+  .s small { display: block; font: 500 9.5px/1.35 "IBM Plex Mono", monospace; opacity: .78; margin-top: 3px; }
+  .ratio { position: absolute; left: 20px; right: 20px; bottom: 40px; height: 10px; border-radius: 5px; overflow: hidden; display: flex; }
+  .ratio div { height: 100%; }
+  .p5 .note { position: absolute; left: 20px; bottom: 18px; font: 500 10px/1 "IBM Plex Mono", monospace; color: rgba(255,255,255,.45); }
+
+  /* 06 tipografia */
+  .p6 { background: var(--papel); }
+  .aa { position: absolute; left: 24px; top: 30px; font-weight: 800; font-size: 150px; line-height: 1; letter-spacing: -.05em; color: var(--marinho); }
+  .aa span { color: var(--ciano); }
+  .type-meta { position: absolute; left: 246px; top: 50px; right: 20px; }
+  .type-meta h4 { font-weight: 800; font-size: 26px; letter-spacing: -.02em; color: var(--tinta); }
+  .type-meta p { font-size: 11.5px; color: var(--grafite); margin-top: 6px; line-height: 1.5; }
+  .weights { display: flex; gap: 12px; margin-top: 12px; font-size: 16px; color: var(--tinta); }
+  .alpha { position: absolute; left: 26px; right: 20px; bottom: 44px; font-size: 13.5px; font-weight: 600; letter-spacing: .12em; color: var(--noturno); }
+  .monoline { position: absolute; left: 26px; bottom: 20px; font: 400 11px/1 "IBM Plex Mono", monospace; color: var(--grafite); }
+  .monoline b { font-weight: 500; color: var(--marinho); }
+
+  /* 07 físico */
+  .p7 { background: radial-gradient(90% 90% at 70% 20%, #0E4670 0%, var(--noturno) 55%, var(--tinta) 100%); }
+  .tent { position: absolute; left: 40px; top: 38px; width: 218px; height: 232px; background: #FBFCFC; border-radius: 6px; transform: rotate(-5deg); box-shadow: 0 30px 50px rgba(0,0,0,.45), 0 2px 0 rgba(0,0,0,.08); padding: 20px 18px; color: var(--tinta); }
+  .tent h5 { font-weight: 800; font-size: 22px; letter-spacing: -.02em; line-height: 1.02; margin-top: 12px; }
+  .tent p { font-size: 11px; color: var(--grafite); margin-top: 6px; line-height: 1.35; }
+  .tent .qr { position: absolute; left: 18px; bottom: 18px; }
+  .tent .where { position: absolute; right: 16px; bottom: 20px; font: 500 8.5px/1.3 "IBM Plex Mono", monospace; color: #6D7B86; text-align: right; }
+  .sticker { position: absolute; right: 46px; top: 78px; width: 118px; height: 118px; border-radius: 50%; background: var(--ciano); display: grid; place-items: center; box-shadow: 0 20px 36px rgba(0,0,0,.4); transform: rotate(8deg); }
+  .badge { position: absolute; right: 26px; bottom: 30px; width: 184px; height: 48px; border-radius: 10px; background: var(--papel); display: flex; align-items: center; gap: 9px; padding: 0 12px; box-shadow: 0 14px 28px rgba(0,0,0,.35); font-size: 10.5px; font-weight: 700; color: var(--marinho); line-height: 1.15; }
+  .badge span { display: block; font: 500 8.5px/1 "IBM Plex Mono", monospace; color: #6D7B86; margin-top: 3px; }
+
+  /* 08 imagem */
+  .p8 { background: var(--tinta); }
+  .p8 svg.scene { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .p8 .cap { position: absolute; left: 20px; bottom: 16px; display: flex; gap: 8px; align-items: center; }
+  .chip-d { font: 500 10px/1 "IBM Plex Mono", monospace; color: #fff; background: rgba(4,12,20,.55); border: 1px solid rgba(255,255,255,.18); padding: 6px 9px; border-radius: 20px; backdrop-filter: blur(4px); }
+
+  /* 09 sistema */
+  .p9 { background: var(--nevoa); }
+  .chips { position: absolute; left: 20px; top: 42px; display: grid; gap: 8px; }
+  .chip { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; font-weight: 600; padding: 6px 10px; border-radius: 8px; width: max-content; }
+  .chip i { width: 7px; height: 7px; border-radius: 50%; display: block; }
+  .c-src { background: var(--ciano-claro); color: var(--marinho); } .c-src i { background: var(--ciano); }
+  .c-pii { background: var(--marinho); color: #fff; font-family: "IBM Plex Mono", monospace; font-weight: 500; } .c-pii i { background: var(--ciano); }
+  .c-ref { background: #FBE3E0; color: #9E2B21; } .c-ref i { background: var(--coral); }
+  .c-draft { background: #FDF0D4; color: #7A5510; } .c-draft i { background: var(--ambar); }
+  .icons { position: absolute; right: 22px; top: 44px; display: flex; align-items: flex-end; gap: 10px; }
+  .ic { background: var(--marinho); display: grid; place-items: center; }
+  .icons .cap { position: absolute; right: 0; top: 76px; font: 500 9px/1 "IBM Plex Mono", monospace; color: rgba(6,26,43,.45); white-space: nowrap; }
+  .input { position: absolute; left: 20px; right: 20px; bottom: 38px; height: 46px; background: #fff; border: 1.5px solid #CFE3EA; border-radius: 12px; display: flex; align-items: center; padding: 0 6px 0 14px; font-size: 12.5px; color: #8494A0; box-shadow: 0 6px 18px rgba(4,67,110,.08); }
+  .input .send { margin-left: auto; width: 34px; height: 34px; border-radius: 9px; background: var(--ciano); display: grid; place-items: center; }
+  .p9 .hint { position: absolute; left: 22px; bottom: 16px; font: 500 9.5px/1 "IBM Plex Mono", monospace; color: rgba(6,26,43,.45); }
+</style>
+</head>
+<body>
+
+<!-- Símbolo: balão de conversa com canto dobrado de página. Módulo m = 34 (dobra). -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="mark" viewBox="0 0 120 120">
+      <path d="M32 10 H76 L110 44 V74 Q110 96 88 96 H38 L10 116 V32 Q10 10 32 10 Z" fill="var(--mb, #04436E)"/>
+      <path d="M76 10 L110 44 H82 Q76 44 76 38 Z" fill="var(--mf, #00ABC5)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="board">
+
+  <!-- 01 CAPA -->
+  <section class="p p1 dark">
+    <div class="grid"></div>
+    <div class="lbl">01 · Marca</div>
+    <div class="lockup">
+      <svg class="mark" width="104" height="104" style="--mb:#FFFFFF;--mf:#00ABC5"><use href="#mark"/></svg>
+      <div>
+        <div class="wm-top">SAC IA</div>
+        <div class="wm-bottom">ACADÊMICO</div>
+      </div>
+    </div>
+    <div class="endorse">Iniciação Científica · UNIFENAS · Alfenas-MG</div>
+    <div class="pg">v0.1</div>
+  </section>
+
+  <!-- 02 CONSTRUÇÃO -->
+  <section class="p p2 light">
+    <div class="lbl">02 · Construção</div>
+    <svg viewBox="0 0 498 298" width="498" height="298">
+      <defs>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="6" stroke="#00ABC5" stroke-width="1.4"/>
+        </pattern>
+      </defs>
+      <g stroke="rgba(6,26,43,.07)" stroke-width="1">
+        <path d="M40 0 V298 M74 0 V298 M108 0 V298 M142 0 V298 M176 0 V298 M210 0 V298 M244 0 V298 M278 0 V298"/>
+        <path d="M0 50 H320 M0 84 H320 M0 118 H320 M0 152 H320 M0 186 H320 M0 220 H320 M0 254 H320"/>
+      </g>
+      <g transform="translate(38 42) scale(1.9)">
+        <path d="M32 10 H76 L110 44 V74 Q110 96 88 96 H38 L10 116 V32 Q10 10 32 10 Z" fill="none" stroke="#04436E" stroke-width=".9"/>
+        <path d="M76 10 L110 44 H82 Q76 44 76 38 Z" fill="url(#hatch)" stroke="#00ABC5" stroke-width=".8"/>
+        <rect x="76" y="10" width="34" height="34" fill="none" stroke="#00ABC5" stroke-width=".6" stroke-dasharray="2 2"/>
+        <circle cx="32" cy="32" r="22" fill="none" stroke="rgba(6,26,43,.35)" stroke-width=".5" stroke-dasharray="1.5 1.5"/>
+        <circle cx="88" cy="74" r="22" fill="none" stroke="rgba(6,26,43,.35)" stroke-width=".5" stroke-dasharray="1.5 1.5"/>
+        <path d="M10 124 H110" stroke="#04436E" stroke-width=".5"/>
+        <path d="M10 121 V127 M110 121 V127" stroke="#04436E" stroke-width=".5"/>
+        <path d="M76 4 H110 M76 1.5 V6.5 M110 1.5 V6.5" stroke="#00ABC5" stroke-width=".6"/>
+        <text x="93" y="0" font-family="IBM Plex Mono" font-size="5" fill="#00ABC5" text-anchor="middle">m</text>
+        <text x="60" y="132" font-family="IBM Plex Mono" font-size="5" fill="#04436E" text-anchor="middle">≈ 3 m</text>
+        <path d="M110 44 L104 44 A6 6 0 0 0 105.8 39.8" fill="none" stroke="#00ABC5" stroke-width=".5"/>
+      </g>
+    </svg>
+    <div class="spec">
+      <div><b>Módulo m</b>lado da dobra</div>
+      <div><b>Raio 0,65 m</b>cantos do balão</div>
+      <div><b>Dobra a 45°</b>página que responde</div>
+      <div><b>Respiro = m</b>área de proteção</div>
+      <div><b>16 px</b>tamanho mínimo</div>
+    </div>
+    <div class="pg">conversa + documento</div>
+  </section>
+
+  <!-- 03 DIGITAL -->
+  <section class="p p3 light">
+    <div class="lbl">03 · Aplicação digital</div>
+    <div class="browser">
+      <div class="chrome"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="url">sac-ia-academico.vercel.app/chat</div></div>
+      <div class="apphead">
+        <svg class="mark" width="18" height="18"><use href="#mark"/></svg>SAC IA Acadêmico<span>· câmpus Alfenas</span>
+      </div>
+      <div class="chat">
+        <div class="b-user">Quando começa o semestre 2026/2?</div>
+        <div class="b-bot">Em 03/08, no calendário de Medicina Alfenas (1º ao 6º período).
+          <div><span class="src"><i></i>Fonte: Calendário Acadêmico 2026</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ESSÊNCIA -->
+  <section class="p p4">
+    <div class="lbl">04 · Essência</div>
+    <svg class="mark ghost" width="230" height="230" style="--mb:#04436E;--mf:#FFFFFF"><use href="#mark"/></svg>
+    <div class="tag">Resposta<br><em>com fonte.</em></div>
+    <div class="sub">Base oficial. Nada inventado. Dado protegido.</div>
+    <div class="pg">04</div>
+  </section>
+
+  <!-- 05 CORES -->
+  <section class="p p5 dark">
+    <div class="lbl">05 · Cores</div>
+    <div class="sw">
+      <div class="s" style="background:#04436E">Marinho<small>#04436E<br>herdado UNIFENAS</small></div>
+      <div class="s" style="background:#00ABC5;color:#061A2B">Ciano<small>#00ABC5<br>herdado UNIFENAS</small></div>
+      <div class="s" style="background:#0B2F4C;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)">Noturno<small>#0B2F4C<br>fundo</small></div>
+      <div class="s" style="background:#EFFDFF;color:#061A2B">Névoa<small>#EFFDFF<br>superfície</small></div>
+      <div class="s" style="background:#F5B83D;color:#061A2B">Âmbar<small>#F5B83D<br>atenção</small></div>
+      <div class="s" style="background:#E4574B">Coral<small>#E4574B<br>recusa</small></div>
+    </div>
+    <div class="ratio">
+      <div style="width:44%;background:#04436E"></div><div style="width:26%;background:#EFFDFF"></div><div style="width:18%;background:#00ABC5"></div><div style="width:6%;background:#0B2F4C"></div><div style="width:3.5%;background:#F5B83D"></div><div style="width:2.5%;background:#E4574B"></div>
+    </div>
+    <div class="note">proporção de uso · acentos quentes só para estados</div>
+  </section>
+
+  <!-- 06 TIPOGRAFIA -->
+  <section class="p p6 light">
+    <div class="lbl">06 · Tipografia</div>
+    <div class="aa">A<span>a</span></div>
+    <div class="type-meta">
+      <h4>Manrope</h4>
+      <p>Mesma família do site da UNIFENAS.<br>Geométrica, aberta e gratuita.</p>
+      <div class="weights"><span style="font-weight:800">Extra</span><span style="font-weight:600">Semi</span><span style="font-weight:400">Regular</span></div>
+    </div>
+    <div class="alpha">ABCDEFGHIJKLMNOPQRSTUVWXYZ · áçãêõ · 0123456789</div>
+    <div class="monoline"><b>IBM Plex Mono</b> · fonte: calendario · kb_version 858943c045de</div>
+  </section>
+
+  <!-- 07 FÍSICO -->
+  <section class="p p7 dark">
+    <div class="lbl">07 · Balcão</div>
+    <div class="tent">
+      <svg class="mark" width="34" height="34"><use href="#mark"/></svg>
+      <h5>Tem uma<br>dúvida?</h5>
+      <p>Pergunte ao<br>SAC IA Acadêmico.</p>
+      <svg class="qr" id="qr" width="64" height="64" viewBox="0 0 21 21"></svg>
+      <div class="where">Secretaria<br>câmpus Alfenas</div>
+    </div>
+    <div class="sticker"><svg class="mark" width="64" height="64" style="--mb:#04436E;--mf:#FFFFFF"><use href="#mark"/></svg></div>
+    <div class="badge"><svg class="mark" width="26" height="26"><use href="#mark"/></svg><div>SAC IA Acadêmico<span>equipe de pesquisa</span></div></div>
+  </section>
+
+  <!-- 08 IMAGEM -->
+  <section class="p p8 dark">
+    <svg class="scene" viewBox="0 0 498 298" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#061A2B"/><stop offset=".62" stop-color="#0B3A5C"/><stop offset="1" stop-color="#0E5577"/>
+        </linearGradient>
+        <pattern id="dotL" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="2.3" fill="#00ABC5"/></pattern>
+        <pattern id="dotM" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="#00ABC5"/></pattern>
+        <pattern id="dotS" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".8" fill="#BDEFF6"/></pattern>
+        <pattern id="sunDots" width="5" height="5" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.9" fill="#F5B83D"/></pattern>
+        <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1.2" fill="rgba(189,239,246,.22)"/></pattern>
+        <radialGradient id="sunFade" cx=".5" cy=".5" r=".5"><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <mask id="sunMask"><circle cx="330" cy="168" r="70" fill="url(#sunFade)"/></mask>
+        <linearGradient id="fadeUp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".15"/><stop offset="1" stop-color="#fff"/></linearGradient>
+        <mask id="hillMask"><rect width="498" height="298" fill="url(#fadeUp)"/></mask>
+      </defs>
+      <rect width="498" height="298" fill="url(#sky)"/>
+      <rect width="498" height="298" fill="url(#dotS)" opacity=".25"/>
+      <rect x="260" y="98" width="140" height="140" fill="url(#sunDots)" mask="url(#sunMask)" opacity=".85"/>
+      <path d="M0 172 C60 150 110 140 170 158 C230 176 270 132 330 136 C390 140 440 162 498 150 V298 H0 Z" fill="url(#dotM)" opacity=".45"/>
+      <path d="M0 196 C70 176 120 186 190 178 C260 170 300 192 360 186 C420 180 460 190 498 184 V298 H0 Z" fill="#0B2F4C"/>
+      <path d="M0 196 C70 176 120 186 190 178 C260 170 300 192 360 186 C420 180 460 190 498 184 V298 H0 Z" fill="url(#dotL)" mask="url(#hillMask)" opacity=".7"/>
+      <rect x="0" y="232" width="498" height="66" fill="#061A2B"/>
+      <rect x="0" y="232" width="498" height="66" fill="url(#scan)"/>
+      <path d="M268 240 H392 M288 250 H372 M306 260 H354" stroke="#F5B83D" stroke-width="1.4" opacity=".55"/>
+    </svg>
+    <div class="lbl" style="color:rgba(255,255,255,.6)">08 · Imagem</div>
+    <svg class="mark" width="30" height="30" style="position:absolute;right:20px;top:14px;--mb:rgba(255,255,255,.9);--mf:#00ABC5"><use href="#mark"/></svg>
+    <div class="cap"><span class="chip-d">retícula</span><span class="chip-d">amanhecer em Alfenas</span><span class="chip-d">lago e horizonte</span></div>
+  </section>
+
+  <!-- 09 SISTEMA -->
+  <section class="p p9 light">
+    <div class="lbl">09 · Sistema</div>
+    <div class="chips">
+      <span class="chip c-src"><i></i>Fonte: matrícula</span>
+      <span class="chip c-pii"><i></i>[CPF] protegido</span>
+      <span class="chip c-ref"><i></i>Encaminhado à secretaria</span>
+      <span class="chip c-draft"><i></i>Rascunho em conferência</span>
+    </div>
+    <div class="icons">
+      <div class="ic" style="width:60px;height:60px;border-radius:15px"><svg class="mark" width="40" height="40" style="--mb:#FFFFFF"><use href="#mark"/></svg></div>
+      <div class="ic" style="width:40px;height:40px;border-radius:10px"><svg class="mark" width="26" height="26" style="--mb:#FFFFFF"><use href="#mark"/></svg></div>
+      <div class="ic" style="width:26px;height:26px;border-radius:7px"><svg class="mark" width="17" height="17" style="--mb:#FFFFFF"><use href="#mark"/></svg></div>
+      <svg class="mark" width="16" height="16"><use href="#mark"/></svg>
+      <div class="cap">60 · 40 · 26 · 16 px</div>
+    </div>
+    <div class="input">Digite sua dúvida...
+      <div class="send"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8 H12 M8.5 4.5 L12 8 L8.5 11.5" stroke="#061A2B" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </div>
+    <div class="hint">estados: fonte · proteção · recusa · rascunho</div>
+    <div class="pg">09</div>
+  </section>
+
+</div>
+
+<script>
+  // Padrão ilustrativo de QR (não é um QR code real).
+  (function () {
+    const svg = document.getElementById("qr");
+    let seed = 20260914;
+    const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
+    const finder = (x, y) => (x < 7 && y < 7) || (x > 13 && y < 7) || (x < 7 && y > 13);
+    let out = "";
+    for (let y = 0; y < 21; y++) {
+      for (let x = 0; x < 21; x++) {
+        if (finder(x, y)) continue;
+        if (rand() > 0.52) out += `<rect x="${x}" y="${y}" width="1" height="1" fill="#061A2B"/>`;
+      }
+    }
+    for (const [fx, fy] of [[0, 0], [14, 0], [0, 14]]) {
+      out += `<rect x="${fx + .5}" y="${fy + .5}" width="6" height="6" fill="none" stroke="#04436E" stroke-width="1"/>`;
+      out += `<rect x="${fx + 2}" y="${fy + 2}" width="3" height="3" fill="#00ABC5"/>`;
+    }
+    svg.innerHTML = out;
+  })();
+</script>
+</body>
+</html>

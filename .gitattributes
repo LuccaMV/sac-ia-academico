@@ -1,0 +1,9 @@
+# Texto sempre com LF no repositório, independente do sistema de quem clona.
+* text=auto eol=lf
+
+# Binários
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.ico binary
