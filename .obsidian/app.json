@@ -1,8 +1,0 @@
-{
-  "showUnsupportedFiles": true,
-  "userIgnoreFilters": [
-    "node_modules/",
-    "package-lock.json",
-    "next-env.d.ts"
-  ]
-}
